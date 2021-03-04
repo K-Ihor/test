@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news</title>
+</head>
+<body>
+      <h1>сиписок ссылок на новости</h1>
+
+      {% for post in posts %}
+      <ul class="list-group">
+          <li class="list-group-item"><h2>"{{ post.title }}" ссылка "{{ post.link }}"</h2></li>
+            {% for comment in comments %}
+                <h4>"{{ comment.created_at }}", by  {{ comment.author }}, количество голосов {{ post.likes }}</h4>
+            {% endfor %}
+          <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Коментировать</a>
+      <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">голосовать</a>
+      </ul>
+      {% endfor %}
+
+
+
+
+</body>
+</html>
